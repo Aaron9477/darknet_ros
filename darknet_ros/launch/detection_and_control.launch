@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- the driver of kinect -->
+  <include file="$(find freenect_launch)/launch/freenect.launch"/>
+  <!-- Launch darknet ros with gdb launch prefix -->
+  <include file="$(find darknet_ros)/launch/yolov3-tiny_turtlebot.launch"/>
+  <!-- the control of turtlebot-->
+  <node pkg="object_follower" type="object_follower.py" name="object_follower" output="screen"/>
+
+
+</launch>
